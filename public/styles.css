@@ -1,0 +1,329 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 20px auto; /* Centrar horizontalmente y dar espacio arriba/abajo */
+    padding: 0 20px; /* Padding a los lados para evitar que el contenido toque los bordes */
+}
+
+nav {
+    background-color: #1f2124; /* Fondo blanco para la barra de navegación */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+    text-align: center; /* Centrar los enlaces de la navbar */
+}
+
+.navbar-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para poner los enlaces en línea */
+    justify-content: center; /* Centrar los elementos del menú */
+}
+
+.navbar-links li {
+    margin: 0 15px; /* Espacio entre los enlaces */
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff; /* Color azul para los enlaces */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+/* --- Título de la Página --- */
+#titulo { /* Asumiendo que 'Productos' tiene un id="titulo" */
+    text-align: center;
+    margin: 40px 0 30px 0; /* Espacio arriba, abajo y nulo a los lados */
+    font-size: 2.5em; /* Tamaño del título */
+    color: #333;
+}
+
+/* --- Contenedor de las Tarjetas de Producto (Grid) --- */
+.product-grid {
+    display: grid; /* Usar CSS Grid para el diseño */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centrar las tarjetas si hay menos de las que llenan la fila */
+    padding-bottom: 50px; /* Espacio al final de la cuadrícula */
+}
+
+/* --- Estilo de cada Tarjeta de Producto --- */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra más pronunciada al pasar el ratón */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex; /* Usar flexbox para el contenido interno */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: space-between; /* Empujar el botón abajo si es necesario */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra más grande al pasar el ratón */
+}
+
+.product-card img {
+    max-width: 100%; /* La imagen no se desborda */
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product-card h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-card p:last-of-type { /* Estilo específico para el precio */
+    font-weight: bold;
+    color: #007bff; /* Color azul para el precio */
+    font-size: 1.2em;
+    margin-top: auto; /* Empuja el precio y el botón hacia abajo */
+}
+
+.product-card a {
+    display: inline-block; /* Para que el botón ocupe el ancho */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card a:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+#newProductPage {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 50px auto; /* Centrar y dar espacio, similar a la tarjeta de detalle */
+    max-width: 600px; /* Ancho máximo para el formulario */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Centrar el contenido dentro del div */
+}
+
+#newProductPage h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el formulario en sí */
+#newProductPage form {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    gap: 15px; /* Espacio entre cada grupo de label/input */
+    text-align: left; /* Alinear el texto de las etiquetas a la izquierda */
+}
+
+#newProductPage label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px; /* Espacio entre el label y su input */
+    display: block; /* Asegura que cada label esté en su propia línea */
+}
+
+#newProductPage input[type="text"],
+#newProductPage input[type="number"],
+#newProductPage select {
+    width: calc(100% - 20px); /* Ancho completo menos padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+    margin-bottom: 10px; /* Espacio después de cada input/select */
+}
+
+/* Estilo específico para el textarea si lo usas para descripción */
+#newProductPage textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 80px; /* Altura mínima */
+    margin-bottom: 10px;
+}
+
+/* Estilo para el botón de submit */
+#newProductPage button[type="submit"] {
+    background-color: #28a745; /* Un verde para "Guardar" */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centrar el botón dentro del flex container */
+    margin-top: 20px;
+}
+
+#newProductPage button[type="submit"]:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el ratón */
+}
+
+/* Estilo para el enlace "Volver al dashboard" */
+#newProductPage a[href="/dashboard"] {
+    display: inline-block; /* Para que el enlace se pueda centrar y aplicar padding */
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#newProductPage a[href="/dashboard"]:hover {
+    color: #0056b3;
+}
+
+/* --- Footer (Si tienes un footer) --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px; /* Espacio para separar del contenido */
+}
+
+/* Puedes reutilizar o adaptar los estilos de #newProductPage para #editProductPage */
+#editProductPage {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 50px auto; /* Centrar y dar espacio */
+    max-width: 600px; /* Ancho máximo para el formulario de edición */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Centrar el contenido del contenedor */
+}
+
+#editProductPage h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#editProductPage form {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    gap: 15px; /* Espacio entre cada grupo de label/input */
+    text-align: left; /* Alinear el texto de las etiquetas a la izquierda */
+}
+
+/* Un estilo general para agrupar labels e inputs */
+.form-group {
+    margin-bottom: 10px; /* Espacio adicional entre grupos de campos */
+}
+
+#editProductPage label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px; /* Espacio entre el label y su input */
+    display: block; /* Asegura que cada label esté en su propia línea */
+}
+
+#editProductPage input[type="text"],
+#editProductPage input[type="number"],
+#editProductPage select,
+#editProductPage textarea { /* Incluimos textarea aquí para estilos consistentes */
+    width: calc(100% - 20px); /* Ancho completo menos padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+    margin-bottom: 5px; /* Espacio después de cada input/select dentro del grupo */
+}
+
+#editProductPage textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 80px; /* Altura mínima para el textarea */
+}
+
+/* Estilos específicos para la imagen de previsualización */
+.image-preview-container {
+    text-align: center; /* Centrar la imagen y el input de URL dentro de este grupo */
+    margin-bottom: 20px; /* Espacio después del grupo de imagen */
+}
+
+.product-edit-image-preview {
+    max-width: 80%; /* Limitar el ancho de la imagen */
+    height: 200px; /* Altura fija para una apariencia consistente */
+    object-fit: contain; /* Ajustar la imagen sin cortarla ni distorsionarla */
+    border-radius: 5px;
+    margin: 0 auto 15px auto; /* Centrar la imagen y dar espacio abajo */
+    display: block; /* Para que margin: auto funcione */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.image-preview-container input[type="text"] {
+    margin: 10px auto; /* Centrar el input de la URL de la imagen si está en este contenedor */
+    display: block; /* Para que margin: auto funcione */
+}
+
+/* Estilo para el botón de submit */
+#editProductPage button[type="submit"] {
+    background-color: #007bff; /* Color azul para "Guardar Cambios" */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centrar el botón dentro del flex container del formulario */
+    margin-top: 20px;
+}
+
+#editProductPage button[type="submit"]:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilo para los enlaces de vuelta */
+#editProductPage p a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#editProductPage p a:hover {
+    color: #0056b3;
+}
