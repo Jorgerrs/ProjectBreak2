@@ -9,16 +9,38 @@ module.exports = {
                         description: "identificador",
                         example: "6201064b0028de7866e2b2c4"
                     },
-                    title: {
+                    nombre: {
                         type: 'string',
-                        description: "titulo de la tarea",
-                        example: "Pruebas de test"
+                        description: "nombre del producto",
+                        example: "Zapatillas azules"
                     },
-                    completed: {
+
+                    descripcion: {
+                        type: 'string',
+                        description: "Descripcion del producto",
+                        example: "Unas zapatillas azules normales"
+                    },
+                    imagen: {
+                        type: 'string',
+                        description: "Imagen del producto",
+                        example: ""
+                    },
+                    categoria: {
+                        type: 'string',
+                        description: "categoria del producto",
+                        example: "Zapatos"
+                    },
+                    
+                    talla: {
                         type: 'boolean',
-                        description: "estado de la tarea",
-                        example: "true"
+                        description: "Talla del producto",
+                        example: "XL"
                     },
+                    precio: {
+                        type: 'double',
+                        description: "Precio del producto",
+                        example: "15"
+                    }
                 }
             }
         }
